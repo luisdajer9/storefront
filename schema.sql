@@ -3,18 +3,18 @@ CREATE DATABASE bamazon;
 USE bamazon;
 
 CREATE TABLE products(
-  item_id INT AUTO_INCREMENT NOT NULL,
-  product_name VARCHAR(45) NOT NULL,
-  product_sales DECIMAL(10,2) NOT NULL,
-  department_name VARCHAR(45) NOT NULL,
+  itemId INT AUTO_INCREMENT NOT NULL,
+  productName VARCHAR(50) NOT NULL,
+  productSales DECIMAL(10,2) NOT NULL,
+  departmentName VARCHAR(50) NOT NULL,
   price DECIMAL(10,2) NOT NULL,
-  stock_quantity INT(10) NOT NULL,
-  primary key(item_id)
+  stockQuantity INT(10) NOT NULL,
+  primary key(itemId)
 );
 
 select * from products;
 
-INSERT INTO products (product_name, product_sales, department_name, price, stock_quantity)
+INSERT INTO products (productName, productSales, departmentName, price, stockQuantity)
 VALUES ("Mario Kart", 0, "Video Games", 49.95, 150),
   ("Counter-Strike:GO", 0, "Video Games", 59.99, 200),
   ("Milk", 0, "Food and Drink", 24.50, 50),
@@ -27,16 +27,16 @@ VALUES ("Mario Kart", 0, "Video Games", 49.95, 150),
   ("Yahtzee", 0, "Board Games", 19.95, 23);
 
   CREATE TABLE departments(
-  department_id INT AUTO_INCREMENT NOT NULL,
-  department_name VARCHAR(45) NOT NULL,
-  over_head_costs DECIMAL(10,2) NOT NULL,
-  total_sales DECIMAL(15,2) NOT NULL,
-  primary key(department_id)
+  departmentId INT AUTO_INCREMENT NOT NULL,
+  departmentName VARCHAR(50) NOT NULL,
+  costs DECIMAL(10,2) NOT NULL,
+  totalSales DECIMAL(15,2) NOT NULL,
+  primary key(departmentId)
 );
 
 select * from departments;
 
-INSERT INTO departments (department_name, over_head_costs, total_sales)
+INSERT INTO departments (departmentName, costs, totalSales)
 VALUES ("Video Games", 200, 300),
   ("Food and Drink", 100, 200),
   ("Apparel", 50, 90),

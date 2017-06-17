@@ -30,8 +30,8 @@ var show Table = function() {
     console.log("____________________________________________");
 
     for (var i = 0; i < res.length; i++) {
-      console.log(res[i].item_id + tab + res[i].product_name + tab +
-        res[i].department_name + tab + res[i].price + tab + res[i].stock_quantity);
+      console.log(res[i].itemId + tab + res[i].productName + tab +
+        res[i].departmentName + tab + res[i].price + tab + res[i].stockQuantity);
     }
     console.log("________________________________________");
 
@@ -69,11 +69,11 @@ var promptCustomer = function(res) {
         }]).then(function(val) {
 
         
-          if ((res[id].stock_quantity - val.quantity) > 0) {
+          if ((res[id].stockQuantity - val.quantity) > 0) {
 
           
             connection.query(
-              "UPDATE products SET stock_quantity='" + (res[id].stock_quantity - val.quantity) +
+              "UPDATE products SET stock_quantity='" + (res[id].stockQuantity - val.quantity) +
               "' WHERE product_name='" + product + "'",
               function(err, res2) {
                 if (err) {
